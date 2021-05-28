@@ -3,16 +3,16 @@ console.log("Atribuição de Variaveis");
 
 const idade = 26;
 
-let nome = "Jader";
+let primeiroNome = "Jader";
 const sobrenome = "Leite";
 
-console.log(nome +" " +sobrenome);
-console.log(nome,sobrenome);
+console.log(primeiroNome +" " +sobrenome);
+console.log(primeiroNome,sobrenome);
 
-console.log(`Meu nome é ${nome} ${sobrenome}`);
+console.log(`Meu nome é ${primeiroNome} ${sobrenome}`);
 
-nome += sobrenome;
+const nomeCompleto = primeiroNome + sobrenome;
 
-console.log(nome);
+console.log(nomeCompleto);
 
 // nome = nome + sobrenome;
