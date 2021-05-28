@@ -8,4 +8,5 @@ console.log(idade*2);
 const anjo = "beijo";
 
 console.log(anjo);
+console.log(anjo+2);
 
