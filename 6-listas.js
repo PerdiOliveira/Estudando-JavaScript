@@ -19,3 +19,5 @@ listaDeDestinos.splice(1,1); // splice remove um item dinamicamente do vetor. aq
 console.log(listaDeDestinos);  
 
 console.log(listaDeDestinos[0], listaDeDestinos[1]);
+
+
