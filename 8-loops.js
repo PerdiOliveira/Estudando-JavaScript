@@ -5,8 +5,8 @@ const listaDeDestinos = new Array(           //vetor
     `São Paulo`,
     `Rio de Janeiro`
 )
-const idadeComprador = 18;
-const estaAcompanhada = true;
+const idadeComprador = 17;
+const estaAcompanhada = false;
 let temPassagemComprada = false;
 let destinoExiste = false;
 const destino = `Rio de Janeiro`
@@ -17,16 +17,27 @@ console.log(listaDeDestinos);
 
 const podeComprar = idadeComprador >= 18 || estaAcompanhada == true;
 
-while (count < 3) { 
-    if (listaDeDestinos[count] == destino){
-        destinoExiste = true;
-        temPassagemComprada = true;
-        break
+if (podeComprar){
+    while (count < 3) { 
+        if (listaDeDestinos[count] == destino){
+            destinoExiste = true;
+            temPassagemComprada = true;
+            break
+        }
+        else{
+            destinoExiste = false;
+            temPassagemComprada = false;
+        }
+        count += 1;
     }
-    else{
-        destinoExiste = false;
-        temPassagemComprada = false;
-    }
-    count += 1;
+}
+else{
+    console.log("Vai pa onde kiri?")
 }
 
+if(destinoExiste && temPassagemComprada){
+    console.log("Boa viagem, mona!");
+}
+else{
+    console.log("Ai mona, vc foi tombada! Policial desfarçado!");
+}
