@@ -13,19 +13,28 @@ const estaAcompanhada = true;
 console.log(`Destinos Possíveis`);
 console.log(listaDeDestinos);
 
-if (idadeComprador >= 18) {
+// if (idadeComprador >= 18) {
+//     console.log("comprador maior de idade");
+//     listaDeDestinos.splice(1, 1); // splice remove um item dinamicamente do vetor. aqui o vetor tbm começa no 0
+
+// }
+// else if (estaAcompanhada) {
+//     console.log("Comprador está acompanhado");
+//     listaDeDestinos.splice(1, 1);
+// }
+// else {
+//     console.log("Comprador não é maior de idade, não posso vender");
+// }
+
+
+if (idadeComprador >= 18 || estaAcompanhada == true) {
     console.log("comprador maior de idade");
     listaDeDestinos.splice(1, 1); // splice remove um item dinamicamente do vetor. aqui o vetor tbm começa no 0
 
 }
-else if (estaAcompanhada) {
-    console.log("Comprador está acompanhado");
-    listaDeDestinos.splice(1, 1);
-}
-else {
+else{
     console.log("Comprador não é maior de idade, não posso vender");
 }
 
 
-console.log(listaDeDestinos);
-
+// && = and e || = or (igual no C)
