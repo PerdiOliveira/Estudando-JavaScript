@@ -41,3 +41,10 @@ if(destinoExiste && temPassagemComprada){
 else{
     console.log("Ai mona, vc foi tombada! Policial desfarçado!");
 }
+
+for(let i = 0; i<3 ; i++){
+    if (listaDeDestinos[i] == destino){
+        destinoExiste = true;
+        temPassagemComprada = true;
+    }
+}
