@@ -1,46 +1,21 @@
-class Cliente{
-    nome;
-    cpf;                           //molde, class não é hoisted, ou seja precisa ser declarada antes de ser chamada
-}
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
 
-class ContaCorrente{
-    agencia;
-    _saldo = 0;
-
-    sacar(valor){                  // criando uma operação dentro da classe
-        if (this._saldo >= valor){
-            this._saldo -= valor;
-            return valor;
-        }
-        else{
-            console.log("Você não tem saldo suficiente");
-        }
-    }
-
-    depositar(valor){
-        if(valor > 0){
-            this._saldo += valor;
-        }
-        else{
-            console.log("valor para depósito é inválido");
-        }
-    }
-}
-
-const cliente1 = new Cliente();  //objeto
-cliente1.nome = "Ricardo";
-cliente1.cpf = "11122233309";
+const cliente1 = new Cliente("Ricardo", 11122233309);  //objeto
+const cliente2 = new Cliente("Alice", 88822233309);
 
 
-const cliente2 = new Cliente(); //objeto
-cliente2.nome = "Alice";
-cliente2.cpf = "11122233309";
+// const cliente2 = new Cliente(); //objeto
+// cliente2.nome = "Alice";
+// cliente2.cpf = "11122233309";
 
-const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.agencia = 1001;
-contaCorrenteRicardo.saldo = 0;
-
-contaCorrenteRicardo.depositar(100);
-const valorSacado = contaCorrenteRicardo.sacar(50);
+const contaCorrenteRicardo = new ContaCorrente(cliente1,1001);
+const conta2 = new ContaCorrente(cliente2, 1002);
 
 
+let valor = 200;
+contaCorrenteRicardo.depositar(500);
+contaCorrenteRicardo.transferir(valor, conta2);
+
+
+console.log(conta2, contaCorrenteRicardo);
