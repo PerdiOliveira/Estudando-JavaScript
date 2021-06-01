@@ -1,6 +1,9 @@
 import { Cliente } from "./Cliente.js";
 export class Conta{
     constructor(saldoInicial, cliente, agencia) {
+        if(this.constructor == Conta){
+            throw new Error("VOCÊ NÃO PODE INSTANCIAR UM OBJETO DO TIPO CONTA DIRETAMENTE")
+        }
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
@@ -21,10 +24,17 @@ export class Conta{
     }
 
     sacar(valor) {
-        if (this._saldo >= valor) {
-            this._saldo -= valor;
-            return valor;
+        throw new Error("Metodo sacar da conta é abstrato")
+    }
+
+    _sacar(taxa, valor){
+        const valorSacado = taxa * valor;
+        if (this._saldo >= valorSacado) {
+            this._saldo -= valorSacado;
+            return valorSacado;
         }
+        return 0;
+
     }
 
     depositar(valor) {
