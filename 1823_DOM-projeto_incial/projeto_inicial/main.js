@@ -11,7 +11,7 @@ const criarTarefa = (evento) => {
 
   const lista = document.querySelector('[data-list]'); //selecionei a lista
   const tarefa = document.createElement('li')          //criando a li dentro da lista
-  tarefa.classList.add('task');                        //adicionando uma classe a tarefa
+  tarefa.classList.add('task');                        //adicionando uma classe ao item da
   const conteudo = `<p class="content">${valor}</p>`; //indicando como que eu quero que seja o paragrafo
 
   tarefa.innerHTML = conteudo //adicionando o conteudo dentro da tarefa no html
